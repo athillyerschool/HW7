@@ -5,3 +5,5 @@ def checkLeap(number):
         if(number%100 == 0):
             return "not leapyear"
         return "leapyear"
+    else:
+        return "not leapyear"
