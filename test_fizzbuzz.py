@@ -22,7 +22,7 @@ class TestCase(unittest.TestCase):
         #to capture stdout
         capturedOutput = io.StringIO()          # Create StringIO object
         sys.stdout = capturedOutput                   #  and redirect stdout.
-        fizzbuzz.print()                              # Call unchanged function.
+        fizzbuzz.printFizzBuzz()                              # Call unchanged function.
         sys.stdout = sys.__stdout__
         self.assertEqual(correctOutput, capturedOutput.getValue())
             
