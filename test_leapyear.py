@@ -13,5 +13,10 @@ class TestCase(unittest.TestCase):
         oneHundreds = [100, 200, 300, 500, 600, 700, 900, 1100, 1300, 1400, 1500, 1700]
         for x in oneHundreds:
             self.assertEqual(leapyear.checkLeap(x), "not leapyear")
+    #test to check that divisible by four returns leapyear (as long as not divisible by 100)
+    def test_four(self):
+        fours = [0, 4, 8, 12, 16, 2016]
+        for x in fours:
+            self.assertEqual(leapyear.checkLeap(x), "leapyear")
 if __name__ == '__main__':
     unittest.main(verbosity=2)
