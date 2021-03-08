@@ -18,5 +18,11 @@ class TestCase(unittest.TestCase):
         fours = [0, 4, 8, 12, 16, 2016]
         for x in fours:
             self.assertEqual(leapyear.checkLeap(x), "leapyear")
+
+    #test years that are known to not be leapyears
+    def test_wrong(self):
+        wrong = [1, 100, 200, 69, 430, 1235, 2001, 2005, 2009]
+        for x in wrong:
+            self.assertEqual(leapyear.checkLeap(x), "not leapyear")
 if __name__ == '__main__':
     unittest.main(verbosity=2)
