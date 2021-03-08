@@ -18,13 +18,17 @@ class TestCase(unittest.TestCase):
         correctOutput += "Buzz\n86\nFizz\n88\n89\nFizzBuzz\n91\n92\nFizz\n94\nBuzz\nFizz\n"
         correctOutput += "97\n98\nFizz\nBuzz\n"
 
+
         #code from https://stackoverflow.com/questions/33767627/python-write-unittest-for-console-print
         #to capture stdout
+
+        #set maxDiff to allow for big string
+        self.maxDiff = None
         capturedOutput = io.StringIO()          # Create StringIO object
         sys.stdout = capturedOutput                   #  and redirect stdout.
         fizzbuzz.printFizzBuzz()                              # Call unchanged function.
         sys.stdout = sys.__stdout__
-        self.assertEqual(correctOutput, capturedOutput.getValue())
+        self.assertEqual(correctOutput, capturedOutput.getvalue())
             
 if __name__ == '__main__':
     unittest.main(verbosity=2)
